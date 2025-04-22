@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 using Volo.Abp.Domain.Entities.Auditing;
 
-namespace Acme.BookStore.Book
+namespace Acme.BookStore.Books
 {
     public class Book : AuditedAggregateRoot<Guid>
     {
