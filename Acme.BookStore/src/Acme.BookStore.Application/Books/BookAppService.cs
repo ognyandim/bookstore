@@ -20,4 +20,21 @@ public class BookAppService :
     {
 
     }
+    // in order to GET 
+    // acme.bookStore.books.book.getList({}).done(function (result) { console.log(result); });
+
+    /* in order to CREATE
+        acme.bookStore.books.book.create({
+            name: 'Foundation',
+            type: 7,
+            publishDate: '1951-05-24',
+            price: 21.5
+        }).then(function (result) {
+            console.log('successfully created the book with id: ' + result.id);
+        });
+    */
+
+    /* In order to DELETE 
+     * acme.bookStore.books.book.
+     * */
 }
