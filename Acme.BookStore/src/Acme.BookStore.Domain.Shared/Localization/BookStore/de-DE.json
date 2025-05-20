@@ -2,12 +2,11 @@
   "culture": "de-DE",
   "texts": {
     "AppName": "BookStore",
-    "Menu:Home": "Home",
-    "Menu:ContactUs": "Kontaktiere uns",
+    "Menu:Home": "Startseite",
+    "Welcome": "Willkommen",
+    "LongWelcomeMessage": "Willkommen bei der Anwendung. Dies ist ein Startup-Projekt basierend auf dem ABP. Für weitere Informationen besuchen Sie abp.io.",
     "Menu:ArticleSample": "Artikelmuster",
     "Home": "Home",
-    "Welcome": "Willkommen",
-    "LongWelcomeMessage": "Willkommen in der Anwendung. Dies ist ein Startup-Projekt basierend auf dem ABP-Framework. Weitere Informationen finden Sie unter",
     "Date": "Datum",
     "Permission:Dashboard": "Dashboard",
     "Menu:Dashboard": "Dashboard",
@@ -37,6 +36,33 @@
     "Unspecified": "System",
     "SeeAllUsers": "Alle Benutzer anzeigen",
     "TakePhoto": "Foto machen",
-    "ChoosePhoto": "Wähle ein Foto aus"
+    "ChoosePhoto": "Wähle ein Foto aus",
+
+
+    // Book store labels 
+    "Menu:BookStore": "Buchladen",
+    "Menu:Books": "Bücher",
+    "Actions": "Aktionen",
+    "Close": "Schließen",
+    "Delete": "Löschen",
+    "Edit": "Bearbeiten",
+    "PublishDate": "Veröffentlichungsdatum",
+    "NewBook": "Neues Buch",
+    "Name": "Name",
+    "Type": "Typ",
+    "Price": "Preis",
+    "CreationTime": "Erstellungszeit",
+    "AreYouSure": "Sind Sie sicher?",
+    "AreYouSureToDelete": "Sind Sie sicher, dass Sie dieses Element löschen möchten?",
+    "Enum:BookType.0": "Undefiniert",
+    "Enum:BookType.1": "Abenteuer",
+    "Enum:BookType.2": "Biografie",
+    "Enum:BookType.3": "Dystopie",
+    "Enum:BookType.4": "Fantastisch",
+    "Enum:BookType.5": "Horror",
+    "Enum:BookType.6": "Wissenschaft",
+    "Enum:BookType.7": "Science-Fiction",
+    "Enum:BookType.8": "Poesie"
+
   }
 }
