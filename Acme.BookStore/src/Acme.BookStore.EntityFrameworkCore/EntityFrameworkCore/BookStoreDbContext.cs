@@ -15,6 +15,7 @@ using Volo.Abp.OpenIddict.EntityFrameworkCore;
 using Volo.Abp.TenantManagement;
 using Volo.Abp.TenantManagement.EntityFrameworkCore;
 using Acme.BookStore.Books;
+using Acme.Hotel.Rooms;
 
 namespace Acme.BookStore.EntityFrameworkCore;
 
@@ -60,6 +61,11 @@ public class BookStoreDbContext :
 
     public DbSet<Book> Books { get; set; }
     public DbSet<Author> Authors { get; set; }
+    public DbSet<Room> Rooms { get; set; }
+    public DbSet<Booking> Bookings { get; set; }
+    public DbSet<Payment> Payments { get; set; }
+    public DbSet<Guest> Guests { get; set; }
+    public DbSet<Manager> Managers { get; set; }
 
     public BookStoreDbContext(DbContextOptions<BookStoreDbContext> options)
         : base(options)

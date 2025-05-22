@@ -44,7 +44,7 @@ namespace Acme.BookStore.Books
 
         protected Book()
         {
-            
+            Authors = new List<Author>();
         }
     }
 }

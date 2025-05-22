@@ -25,9 +25,13 @@ namespace Acme.BookStore.Books
             BirthDate = birthDate;
             ShortBio = shortBio;
 
-            if(books.Any())
+            if (books.Any())
             {
                 Books = [.. books];
+            }
+            else
+            {
+                Books = new List<Book>();
             }
             
         }
@@ -37,6 +41,8 @@ namespace Acme.BookStore.Books
             Name = name;
             BirthDate = birthDate;
             ShortBio = shortBio;
+
+            Books = new List<Book>();
         }
     }
 }
