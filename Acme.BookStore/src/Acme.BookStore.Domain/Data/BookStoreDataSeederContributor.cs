@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
+
 using Volo.Abp.Data;
 using Volo.Abp.DependencyInjection;
 using Volo.Abp.Domain.Repositories;
@@ -19,40 +21,47 @@ namespace Acme.BookStore.Data
         private readonly IRepository<Book, Guid> _bookRepository;
         private readonly IGuidGenerator _guidGenerator;
         private readonly ICurrentTenant _currentTenant;
+        private readonly IRepository<Author, Guid> _authorRepository;
 
         public BookStoreDataSeederContributor(
             IRepository<Book, Guid> bookRepository,
             IGuidGenerator guidGenerator,
-            ICurrentTenant currentTenant)
+            ICurrentTenant currentTenant,
+            IRepository<Author, Guid> authorRepository)
         {
             _bookRepository = bookRepository;
             _guidGenerator = guidGenerator;
             _currentTenant = currentTenant;
+            _authorRepository = authorRepository;
         }
 
         public async Task SeedAsync(DataSeedContext context)
         {
+            var orwell = new Author("George Orwell", new DateTime(1903, 6, 25), "Bio");
+            var douglasAdams = new Author("Douglas Adams", new DateTime(1952, 3, 11), "Bio");
+
+            if (await _authorRepository.GetCountAsync() <= 0)
+            {
+
+                await _authorRepository.InsertAsync(orwell);
+                await _authorRepository.InsertAsync(douglasAdams);
+            }
+
             //using (_currentTenant.Change(context?.TenantId))
             //{
-                if (await _bookRepository.GetCountAsync() <= 0)
+            if (await _bookRepository.GetCountAsync() <= 0)
             {
                 await _bookRepository.InsertAsync(
-                    new Book
+                    new Book("1984", new DateTime(1949, 6, 8), BookType.Dystopia, new[] { orwell })
                     {
-                        Name = "1984",
-                        Type = BookType.Dystopia,
-                        PublishDate = new DateTime(1949, 6, 8),
-                        Price = 19.84f
+                        Price = 19.84f,
                     },
                     autoSave: true
                 );
 
                 await _bookRepository.InsertAsync(
-                    new Book
+                    new Book("The Hitchhiker's Guide to the Galaxy", new DateTime(1995, 9, 27), BookType.ScienceFiction, new[] { douglasAdams })
                     {
-                        Name = "The Hitchhiker's Guide to the Galaxy",
-                        Type = BookType.ScienceFiction,
-                        PublishDate = new DateTime(1995, 9, 27),
                         Price = 42.0f
                     },
                     autoSave: true
