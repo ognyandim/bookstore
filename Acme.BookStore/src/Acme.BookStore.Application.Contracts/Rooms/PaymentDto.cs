@@ -8,6 +8,6 @@ namespace Acme.Hotel.Rooms
         public Guid BookingId { get; set; }
         public decimal Amount { get; set; }
         public DateTime PaymentDate { get; set; }
-        public string Status { get; set; }
+        public required string Status { get; set; }
     }
 }

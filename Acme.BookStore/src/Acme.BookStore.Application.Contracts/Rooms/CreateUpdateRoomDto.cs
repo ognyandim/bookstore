@@ -4,7 +4,7 @@ namespace Acme.Hotel.Rooms
 {
     public class CreateUpdateRoomDto
     {
-        public string Number { get; set; }
-        public string Type { get; set; }
+        public required string Number { get; set; }
+        public required string Type { get; set; }
     }
 }
