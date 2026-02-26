@@ -10,4 +10,4 @@ Example project demonstrating usage of the boilerpalte project.
     - [ ] Create button in table for Delete
 - [ ] Introduce Event Modeling
 - [ ] Experiment with TDD assisted by Copilot
-- 
+- [ ] Integrate Quartz.net as background worker
